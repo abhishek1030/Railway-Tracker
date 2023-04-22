@@ -12,5 +12,4 @@ public class RailwayTrackerApplication {
 		System.out.println("RailwayTrackerApplication started !!");
 
 	}
-
 }
