@@ -1,5 +1,6 @@
 package com.railway.tracker.controller;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.railway.tracker.model.Train;
 import com.railway.tracker.model.TrainRequest;
@@ -33,7 +34,9 @@ public class TrainsServiceController {
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println(response.body());
-        TrainResponse trainsInfo = new ObjectMapper().readValue(response.body(), TrainResponse.class);
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        TrainResponse trainsInfo = objectMapper.readValue(response.body(), TrainResponse.class);
         return null;
     }
 }

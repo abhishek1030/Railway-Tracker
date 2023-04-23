@@ -15,11 +15,11 @@ public class Train {
 
     private int train_number;
     private String train_name;
-    private String from_station;
-    private String to_station;
+    private String from;
+    private String to;
     private String from_station_name;
     private String to_station_name;
     private boolean isSpecial;
-    private Date departure_date;
-
+    private String train_date;
+    private String train_type;
 }
