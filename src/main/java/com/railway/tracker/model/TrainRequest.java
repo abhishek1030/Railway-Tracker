@@ -15,5 +15,5 @@ public class TrainRequest {
 
     private String fromStation;
     private String toStation;
-    private Date date;
+    private String date;
 }
